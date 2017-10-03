@@ -146,8 +146,6 @@ def RECEIVE_MESSAGE(op):
         print ("\n\nRECEIVE_MESSAGE\n\n")
         return
 
-tracer.addOpInterrupt(26, RECEIVE_MESSAGE)
-
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
     mes.to, mes.from_ = to, profile.mid
