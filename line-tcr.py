@@ -108,8 +108,8 @@ wait = {
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
-    "ProtectQR":False,
-    "Protectguest":False,
+    "ProtectQR":True,
+    "Protectguest":True,
     "Protectcancel":False,
     "protectionOn":True,
     "atjointicket":True,
@@ -125,6 +125,20 @@ wait2 = {
 setTime = {}
 setTime = wait2['setTime']
 
+def RECEIVE_MESSAGE(op):
+    msg = op.message
+    try:
+        if msg.contentType == 0:
+            try:
+                if msg.to in wait['readPoint']:
+                    if msg.from_ in wait["ROM"][msg.to]:
+                        del wait["ROM"][msg.to][msg.from_]
+                else:
+                    pass
+            except:
+                pass
+        else:
+            pass
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
@@ -890,7 +904,7 @@ def bot(op):
                                      "STKVER": "100" }
                 ki.sendMessage(msg)
                 kk.sendMessage(msg)
-            elif msg.text in ["Galon"]:
+            elif msg.text in ["Sedih"]:
                 msg.contentType = 7
                 msg.text = None
                 msg.contentMetadata = {
@@ -1448,11 +1462,8 @@ def bot(op):
                     kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif msg.text == "$set":
+            elif msg.text == "Check":
                     cl.sendText(msg.to, "Check sider")
-                    ki.sendText(msg.to, "Check sider")
-                    kk.sendText(msg.to, "Check sider")
-                    kc.sendText(msg.to, "Check sider")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -1462,7 +1473,7 @@ def bot(op):
                     wait2['readMember'][msg.to] = ""
                     wait2['ROM'][msg.to] = {}
                     print wait2
-            elif msg.text == "$read":
+            elif msg.text == "Point":
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -1829,8 +1840,8 @@ def bot(op):
                 ki.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
                 kk.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
                 kc.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
-            elif msg.text in ["#welcome"]:
-                ki.sendText(msg.to,"Selamat datang di Chivas Family Room")
+            elif msg.text in ["Welkam"]:
+                ki.sendText(msg.to,"Selamat datang")
                 kk.sendText(msg.to,"Jangan nakal ok!")
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
@@ -1854,7 +1865,7 @@ def bot(op):
       #-------------Fungsi Balesan Respon Finish---------------------#
 
        #-------------Fungsi Speedbot Start---------------------#
-            elif msg.text in ["Sp","Speedbot","speedbot"]:
+            elif msg.text in ["Speed","Speedbot","speedbot"]:
                 start = time.time()
                 cl.sendText(msg.to, "Waiting...")
                 elapsed_time = time.time() - start
@@ -2008,7 +2019,7 @@ def nameUpdate():
                 now2 = datetime.now()
                 nowT = datetime.strftime(now2,"(%H:%M)")
                 profile4 = kc.getProfile()
-                profile4.displayName = wait["cName4"] + nowT
+                profile4.displayName = wait["cName4"]
                 kc.updateProfile(profile4)
             time.sleep(600)
         except:
