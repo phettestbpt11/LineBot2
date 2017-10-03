@@ -1470,8 +1470,8 @@ def bot(op):
                     kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif msg.text == "Check":
-                    cl.sendText(msg.to, "Check sider")
+            elif msg.text == "Set":
+                    cl.sendMessage(msg.to, "Check sider")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -1479,9 +1479,10 @@ def bot(op):
                         pass
                     wait2['readPoint'][msg.to] = msg.id
                     wait2['readMember'][msg.to] = ""
+                    wait2['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
                     wait2['ROM'][msg.to] = {}
                     print wait2
-            elif msg.text == "Point":
+                elif msg.text == "Point":
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -1491,10 +1492,9 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "People who readed %s\nthat's it\n\nPeople who have ignored reads\n%sIt is abnormal ♪\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendMessage(msg.to, "-----Tercyduck------- %s\n---------Tukang Ngintip--------\n%sAwas Bintitan\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
-                        cl.sendText(msg.to, "An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")
-#-----------------------------------------------
+                        cl.sendMessage(msg.to, "Check Sider Sudah On")#-----------------------------------------------
 
 #-----------------------------------------------
          #----------------Fungsi Join Group Start-----------------------#
@@ -2024,8 +2024,6 @@ def nameUpdate():
                 profile3.displayName = wait["cName3"]
                 kk.updateProfile(profile3)
                 
-                now2 = datetime.now()
-                nowT = datetime.strftime(now2,"(%H:%M)")
                 profile4 = kc.getProfile()
                 profile4.displayName = wait["cName4"]
                 kc.updateProfile(profile4)
