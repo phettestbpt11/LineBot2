@@ -139,6 +139,8 @@ def RECEIVE_MESSAGE(op):
                 pass
         else:
             pass
+        except:
+            pass
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
