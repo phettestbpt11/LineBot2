@@ -130,9 +130,9 @@ def RECEIVE_MESSAGE(op):
     try:
         if msg.contentType == 0:
             try:
-                if msg.to in wait['readPoint']:
-                    if msg.from_ in wait["ROM"][msg.to]:
-                        del wait["ROM"][msg.to][msg.from_]
+                if msg.to in wait2['readPoint']:
+                    if msg.from_ in wait2["ROM"][msg.to]:
+                        del wait2["ROM"][msg.to][msg.from_]
                 else:
                     pass
             except:
