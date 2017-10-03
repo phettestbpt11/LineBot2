@@ -139,8 +139,14 @@ def RECEIVE_MESSAGE(op):
                 pass
         else:
             pass
-        except:
-            pass
+    except KeyboardInterrupt:
+	       sys.exit(0)
+    except Exception as error:
+        print error
+        print ("\n\nRECEIVE_MESSAGE\n\n")
+        return
+
+tracer.addOpInterrupt(26, RECEIVE_MESSAGE)
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
