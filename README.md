@@ -1,5 +1,5 @@
 # LIN3-TCR
-BOT Chivas Edited V.1 Login Token / Link
+BOT R.A Login Token / Link
 
 Catatan : 
 - Bot Ini Menggunakan 4 Akun Bot + 1 Akun admin <br>
@@ -29,4 +29,4 @@ Cara Menjalankan Bot :
 - cd LIN3-TCR && python2 line-tcr.py<br>
 - Loginkan Dengan Akun Bot Kalian Lalu Masukkan MID Admin
 
-Butuh Bantuan? Silahkan Masuk Ke Group, add : andyihsan ( khusus yg udah tau bot aja )
+Butuh Bantuan? Silahkan Masuk Ke Group, add : alvian128 ( khusus yg udah tau bot aja )
