@@ -631,7 +631,7 @@ def bot(op):
                 kc.inviteIntoGroup(msg.to,[midd])
 	    elif msg.text in ["Owner","owner"]:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': admin}
+                msg.contentMetadata = {'u5aa2d0aa38b6566631c797f0334ae415': admin}
                 cl.sendMessage(msg)
             elif msg.text in ["Bot?"]:
                 msg.contentType = 13
