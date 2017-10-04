@@ -1105,8 +1105,8 @@ def bot(op):
                         cl.sendText(msg.to,"Cek Mid Send Contact Off")
                     else:
                         cl.sendText(msg.to,"done")
-		else:
-			cl.sendText(msg.to,"You are not admin")
+	      else:
+		cl.sendText(msg.to,"You are not admin")
             elif msg.text in ["è‡ªå‹•å�‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•å�ƒåŠ ï¼šé–‹"]:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
