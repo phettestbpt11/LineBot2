@@ -1447,9 +1447,9 @@ def bot(op):
         #-------------Fungsi Jam on/off Start-------------------#            
             elif msg.text in ["Jam on"]:
 		if msg.from_ in admin:
-                if wait["clock"] == True:
+                 if wait["clock"] == True:
                     kc.sendText(msg.to,"Bot 4 jam on")
-                else:
+                 else:
                     wait["clock"] = True
                     now2 = datetime.now()
                     nowT = datetime.strftime(now2,"(%H:%M)")
@@ -1458,7 +1458,7 @@ def bot(op):
                     kc.updateProfile(profile)
                     kc.sendText(msg.to,"Jam Selalu On")
             elif msg.text in ["Jam off"]:
-		if msg.from_ in admin:
+	       if msg.from_ in admin:
                 if wait["clock"] == False:
                     kc.sendText(msg.to,"Bot 4 jam off")
                 else:
@@ -1468,7 +1468,7 @@ def bot(op):
          
          #-------------Fungsi Change Clock Start------------------#
             elif msg.text in ["Change clock"]:
-		if msg.from_ in admin:
+	        if msg.from_ in admin:
                 n = msg.text.replace("Change clock","")
                 if len(n.decode("utf-8")) > 13:
                     cl.sendText(msg.to,"changed")
@@ -1479,14 +1479,15 @@ def bot(op):
         
          #-------------Fungsi Jam Update Start---------------------#            
             elif msg.text in ["Jam Update"]:
-                if wait["clock"] == True:
+		if msg.from_ in admin:
+                 if wait["clock"] == True:
                     now2 = datetime.now()
                     nowT = datetime.strftime(now2,"(%H:%M)")
                     profile = kc.getProfile()
                     profile.displayName = wait["cName4"] + nowT
                     kc.updateProfile(profile)
                     kc.sendText(msg.to,"Sukses update")
-                else:
+                 else:
                     kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
