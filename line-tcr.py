@@ -1468,7 +1468,6 @@ def bot(op):
          
          #-------------Fungsi Change Clock Start------------------#
             elif msg.text in ["Change clock"]:
-	        if msg.from_ in admin:
                 n = msg.text.replace("Change clock","")
                 if len(n.decode("utf-8")) > 13:
                     cl.sendText(msg.to,"changed")
