@@ -1490,7 +1490,7 @@ def bot(op):
                     kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif msg.text == "Check":
+            elif msg.text in ["Check"]:
                     cl.sendText(msg.to, "Check sider")
                     try:
                         del wait2['readPoint'][msg.to]
@@ -1501,7 +1501,7 @@ def bot(op):
                     wait2['readMember'][msg.to] = ""
                     wait2['ROM'][msg.to] = {}
                     print wait2
-            elif msg.text == "Point":
+            elif msg.text in ["Point"]:
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
