@@ -84,6 +84,7 @@ mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
+admin = admin.getProfile().mid
 
 Bots=[mid,Amid,Bmid,Cmid,"u5aa2d0aa38b6566631c797f0334ae415"]
 admin=["u5aa2d0aa38b6566631c797f0334ae415"]
@@ -631,8 +632,9 @@ def bot(op):
                 kc.inviteIntoGroup(msg.to,[midd])
 	    elif msg.text in ["Owner","owner"]:
                 msg.contentType = 13
-                msg.contentMetadata = {'u5aa2d0aa38b6566631c797f0334ae415': admin}
+                msg.contentMetadata = {'mid': admin}
                 cl.sendMessage(msg)
+		cl.sendText(msg.to,"This is my bos")
             elif msg.text in ["Bot?"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
