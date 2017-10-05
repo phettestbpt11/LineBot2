@@ -901,7 +901,7 @@ def bot(op):
                     if msg.toType == 2:
                         if msg.from_ in admin:
                             print "[Command]Ban executed"
-                            _name = msg.text.replace("Ar Ban @","")
+                            _name = msg.text.replace("Gh Ban @","")
                             _nametarget = _name.rstrip('  ')
                             gs = ki.getGroup(msg.to)
                             gs = kk.getGroup(msg.to)
@@ -928,7 +928,7 @@ def bot(op):
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Unban executed"
-                        _name = msg.text.replace("Ar Unban @","")
+                        _name = msg.text.replace("Gh Unban @","")
                         _nametarget = _name.rstrip('  ')
                         gs = ki.getGroup(msg.to)
                         gs = kk.getGroup(msg.to)
