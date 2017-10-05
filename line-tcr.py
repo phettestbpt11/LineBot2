@@ -998,27 +998,51 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
+#-----------------------[Check Sider]------------------------
+            elif msg.text == "$set":
+                    cl.sendText(msg.to, "Check sider")
+                    ki.sendText(msg.to, "Check sider")
+                    kk.sendText(msg.to, "Check sider")
+                    kc.sendText(msg.to, "Check sider")
+                    try:
+                        del wait2['readPoint'][msg.to]
+                        del wait2['readMember'][msg.to]
+                    except:
+                        pass
+                    wait2['readPoint'][msg.to] = msg.id
+                    wait2['readMember'][msg.to] = ""
+                    wait2['ROM'][msg.to] = {}
+                    print wait2
+            elif msg.text == "$read":
+                    if msg.to in wait2['readPoint']:
+                        if wait2["ROM"][msg.to].items() == []:
+                            chiya = ""
+                        else:
+                            chiya = ""
+                            for rom in wait2["ROM"][msg.to].items():
+                                print rom
+                                chiya += rom[1] + "\n"
+
+                        cl.sendText(msg.to, "People who readed %s\nthat's it\n\nPeople who have ignored reads\n%sIt is abnormal ♪\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                    else:
+                        cl.sendText(msg.to, "An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")
 #-----------------------[Bot speed test Section]------------------------
             elif msg.text in ["Speed","speed"]:
                 if msg.from_ in staff:
-
                     start = time.time()
                     cl.sendText(msg.to, "Bot 1 Processing Request")                    
                     elapsed_time = time.time() - start
                     cl.sendText(msg.to, "%sseconds" % (elapsed_time))
 
-                    start2 = time.time()
-                    kk.sendText(msg.to, "Bot 2 Processing Request")                    
+                    start2 = time.time()                   
                     elapsed_time2 = time.time() - start2
                     kk.sendText(msg.to, "%sseconds" % (elapsed_time2))
                     
-                    start3 = time.time()
-                    ki.sendText(msg.to, "Bot 3 Processing Request")                    
+                    start3 = time.time()                    
                     elapsed_time3 = time.time() - start3
                     ki.sendText(msg.to, "%sseconds" % (elapsed_time3))
                     
-                    start4 = time.time()
-                    kc.sendText(msg.to, "Bot 4 Processing Request")                    
+                    start4 = time.time()                   
                     elapsed_time4 = time.time() - start4
                     kc.sendText(msg.to, "%sseconds" % (elapsed_time4))
                     print "[Command]Speed all executed"
