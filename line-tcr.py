@@ -86,8 +86,8 @@ Amid = kk.getProfile().mid
 Bmid = ki.getProfile().mid
 Cmid = kc.getProfile().mid
 Bots = [mid,Amid,Bmid,Cmid,]
-admin = ["u5aa2d0aa38b6566631c797f0334ae415"]
-staff = ["u5aa2d0aa38b6566631c797f0334ae415"]
+admin = ["u5aa2d0aa38b6566631c797f0334ae415","u85326fcaa03d37e33403c3281943aaef","u3a8f175f00cd198a04be74e8ea90dec5"]
+staff = ["u5aa2d0aa38b6566631c797f0334ae415","u85326fcaa03d37e33403c3281943aaef","u3a8f175f00cd198a04be74e8ea90dec5"]
 adminMID = "u5aa2d0aa38b6566631c797f0334ae415"
 wait = {
     'contact':True,
@@ -486,7 +486,7 @@ def bot(op):
                 if msg.toType == 2:
                     if msg.from_ in staff:
                         X = cl.getGroup(msg.to)
-                        X.name = msg.text.replace("Ar Gn ","")
+                        X.name = msg.text.replace("Gh Gn ","")
                         random.choice(KAC).updateGroup(X)
                         print "[Command]Gn executed"
                     else:
@@ -500,7 +500,7 @@ def bot(op):
                 if msg.toType == 2:
                     if msg.from_ in staff:
                         X = cl.getGroup(msg.to)
-                        X.name = msg.text.replace("Ar gn ","")
+                        X.name = msg.text.replace("Gh gn ","")
                         random.choice(KAC).updateGroup(X)
                         print "[Command]Gn executed"
                     else:
@@ -698,15 +698,15 @@ def bot(op):
                 print "[Command]Yid executed"
 #-----------------------[Send Contact Section]------------------------
             elif "Gh Contact" in msg.text:
-                mmid = msg.text.replace("Ar Contact ","")
+                mmid = msg.text.replace("Gh Contact ","")
                 msg.contentType = 13
-                msg.contentMetadata = {"mid":mmid}
+                msg.contentMetadata = {"mid":AdminMID}
                 cl.sendMessage(msg)
                 print "[Command]Contact executed"
             elif "Gh contact" in msg.text:
-                mmid = msg.text.replace("Ar contact ","")
+                mmid = msg.text.replace("Gh contact ","")
                 msg.contentType = 13
-                msg.contentMetadata = {"mid":mmid}
+                msg.contentMetadata = {"mid":AdminMID}
                 cl.sendMessage(msg)
                 print "[Command]Contact executed"
 #-----------------------[Auto Join Section]------------------------
