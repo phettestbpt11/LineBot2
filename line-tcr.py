@@ -1026,7 +1026,7 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
-#-----------------------[Auto Cancel Section]------------------------
+#-----------------------[Add Staff Section]------------------------
             elif "Add staff @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff add executing"
@@ -1190,12 +1190,12 @@ def bot(op):
 
             elif msg.text in ["Auto Url On","Auto url on"]:
                 if msg.from_ in staff:
-                    if cancelinvite["autoCancelUrl"] == True:
-                        cancelinvite["autoCancelUrl"] = False
-                        cl.sendText(msg.to, "Auto Cancel Url turned off")
+                    if cancelinvite["autoCancelUrl"] == False:
+                        cancelinvite["autoCancelUrl"] = True
+                        cl.sendText(msg.to, "Auto Cancel Url turned on")
                         print "[Command]Url on executed"
                     else:
-                        cl.sendText(msg.to, "Auto Cancel already turned off")
+                        cl.sendText(msg.to, "Auto Cancel already turned on")
                         print "[Command]Url on executed"
                 else:
                     cl.sendText(msg.to,"Command denied.")
@@ -1303,7 +1303,7 @@ def bot(op):
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Add executing"
-                        _name = msg.text.replace("Ar Add @","")
+                        _name = msg.text.replace("Bot Add @","")
                         _nametarget = _name.rstrip('  ')
                         gs = ki.getGroup(msg.to)
                         gs = kk.getGroup(msg.to)
@@ -1328,7 +1328,7 @@ def bot(op):
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Add executed"
-                        _name = msg.text.replace("Ar Add @","")
+                        _name = msg.text.replace("Bot Add @","")
                         _nametarget = _name.rstrip('  ')
                         gs = ki.getGroup(msg.to)
                         gs = kk.getGroup(msg.to)
