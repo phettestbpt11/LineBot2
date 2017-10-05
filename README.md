@@ -1,5 +1,5 @@
 # LIN3-TCR
-BOT R.A Login Token / Link
+BOT Ghoul Login Token / Link
 
 Catatan : 
 - Bot Ini Menggunakan 4 Akun Bot + 1 Akun admin <br>
@@ -12,7 +12,7 @@ Cara Install Via Android :
 - pip2 install thrift==0.9.3<br>
 - pkg install git<br>
 - pkg install nano<br>
-- git clone https://github.com/andyihsan/LIN3-TCR<br>
+- git clone https://github.com/fianchiks/LIN3-TCR<br>
 - Selesai
 
 Cara Membuka/Mengedit File :
